@@ -1,4 +1,4 @@
-package com.sideproject.timetrackingapp.model;
+package com.sideproject.timetrackingapp.entity;
 
 import jakarta.persistence.*;
 
