@@ -13,6 +13,6 @@ public class AppController
 
     @GetMapping("/login")
     public String a() {
-        return "login";
+        return "auth/login";
     }
 }
