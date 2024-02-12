@@ -16,9 +16,9 @@ public class Role
     @Column(name = "name", nullable = false, length = 20)
     private String name;
 
-    /* 
-    * getters and setters methods
-    */
+    /**
+     * getters and setters methods
+     */
 
     public Integer getId() {
         return id;
