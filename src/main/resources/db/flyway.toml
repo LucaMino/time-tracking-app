@@ -1,0 +1,27 @@
+databaseType = "PostgreSql"
+id = "0dcc8926-951a-4484-badb-071f48347b59"
+name = "time-tracking-app"
+
+[flyway]
+locations = [ "filesystem:migrations" ]
+mixed = true
+outOfOrder = true
+validateMigrationNaming = true
+
+  [flyway.check]
+  majorTolerance = 0
+
+[flywayDesktop]
+developmentEnvironment = "development"
+schemaModel = "schema-model"
+shadowEnvironment = "shadow"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgresql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[environments.target1]
+url = "jdbc:postgresql://localhost:5432/time-tracking-app"
+schemas = [ "time-tracking-app" ]

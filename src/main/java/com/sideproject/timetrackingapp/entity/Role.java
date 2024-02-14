@@ -1,10 +1,9 @@
 package com.sideproject.timetrackingapp.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name="roles")
-
 public class Role 
 {
     // id
@@ -16,23 +15,30 @@ public class Role
     @Column(name = "name", nullable = false, length = 20)
     private String name;
 
+    // default constructor
+    public Role() {}
+
     /**
      * getters and setters methods
      */
 
-    public Integer getId() {
+    public Integer getId()
+    {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Integer id) 
+    {
         this.id = id;
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 }

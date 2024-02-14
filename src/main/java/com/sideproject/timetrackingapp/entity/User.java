@@ -1,10 +1,13 @@
 package com.sideproject.timetrackingapp.entity;
 
-import jakarta.persistence.*;
+import java.util.Set;
+import javax.persistence.*;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name = "users")
-
 public class User 
 {
     // id
@@ -29,14 +32,58 @@ public class User
     private String lastName;
 
     /**
+     * relationships
+     */
+
+    /**
+     * users - roles
+     * lazy collections are disabled, so role data is loaded immediately
+     */
+    // @ManyToMany
+    // @LazyCollection(LazyCollectionOption.FALSE)
+    // private Set<Role> roles;
+
+    /**
      * getters and setters methods
      */
 
-    public Long getId() {
+    public Long getId() 
+    {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id) 
+    {
         this.id = id;
-    }; 
+    }
+
+    public String getEmail() 
+    {
+        return email;
+    }
+
+    public void setEmail(String email) 
+    {
+        this.email = email;
+    }
+
+    public String getPassword() 
+    {
+        return password;
+    }
+    
+    public void setPassword(String password) 
+    {
+        this.password = password;
+    }
+
+    /* public Set<Role> getRoles() 
+    {
+        return roles;
+    }
+    
+    public void setRoles(Set<Role> roles) 
+    {
+        this.roles = roles;
+    } */
 }

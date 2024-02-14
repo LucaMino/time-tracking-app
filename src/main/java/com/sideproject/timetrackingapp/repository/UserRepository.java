@@ -11,11 +11,17 @@ import com.sideproject.timetrackingapp.entity.User;
 public interface UserRepository extends JpaRepository<User, Long> 
 {    
     /**
-     * finds a user by username or email
+     * finds a user by email
      * 
-     * @param username
      * @param email
-     * @return The user found by username or email, or null if no user is found.
+     * @return The user found by email, or null if no user is found.
      */
-    User findByUsernameOrEmail(String username, String email);
+    User findByEmail(String email);
+
+    /**
+     * 
+     * @param email
+     * @return
+     */
+    boolean existsByEmail(String email);
 }
